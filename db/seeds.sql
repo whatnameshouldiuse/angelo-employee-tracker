@@ -36,7 +36,7 @@ VALUES
     ("R&D Project Manager", 100000, 5),
     ("Technician", 70000, 5),
     ("Data Scientist", 120000, 5),
-    ("QA Specialist", 75000, 5)
+    ("QA Specialist", 75000, 5);
 
 INSERT INTO
     employee (first_name, last_name, role_id, manager_id)
@@ -100,4 +100,4 @@ VALUES
     ("Ahmed", "Ali", 26, 49),
     ("Lucy", "Collins", 26, 49),
     ("Fernando", "Sanchez", 27, 49),
-    ("Elena", "Morris", 27, 49),
+    ("Elena", "Morris", 27, 49);
