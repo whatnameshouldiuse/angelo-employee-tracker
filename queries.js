@@ -5,7 +5,7 @@ SELECT
     employee.last_name,
     role.title,
     role.salary,
-    department.name as department
+    department.name as department,
     employee.manager_id
 FROM employee
 INNER JOIN (
@@ -44,7 +44,7 @@ INNER JOIN (
 ) as mi
     ON em.id = mi.manager_id
 LEFT JOIN (
-    role LEFT JOIN department ON role.department_id = department.id)
+    role LEFT JOIN department ON role.department_id = department.id
 )
     ON em.role_id = role.id;
 `;
@@ -57,7 +57,6 @@ SELECT
     role.title,
     role.salary,
     department.name as department
-    employee.manager_id
 FROM employee
 INNER JOIN (
     role INNER JOIN department ON role.department_id = department.id
@@ -75,7 +74,6 @@ SELECT
     role.title,
     role.salary,
     department.name as department
-    employee.manager_id
 FROM employee
 INNER JOIN (
     role INNER JOIN department ON role.department_id = department.id
@@ -96,7 +94,7 @@ LEFT JOIN (
 )
     ON department.id = role.department_id
 WHERE department.id = ?
-GROUP BY department.id
+GROUP BY department.id;
 `
 
 const AddEmployee = `

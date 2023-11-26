@@ -107,7 +107,7 @@ const InvokeMain = function() {
                 });
                 break;
             case 'vEmployeesManager':
-                var [rows, fields] = db.execute(queries.ViewByManagerPrompt);
+                var [rows, fields] = await db.promise().query(queries.ViewByManagerPrompt);
                 var prompt = [{
                     type: 'list',
                     name: 'managerChoice',
@@ -129,7 +129,7 @@ const InvokeMain = function() {
                 });
                 break;
             case 'vEmployeesDepartment':
-                var [rows, fields] = db.execute(queries.ViewAllDepartments);
+                var [rows, fields] = await db.promise().query(queries.ViewAllDepartments);
                 var prompt = [{
                     type: 'list',
                     name: 'departmentChoice',
@@ -157,7 +157,7 @@ const InvokeMain = function() {
                     message: 'Select a Department',
                     choices: []
                 }];
-                var [rows, fields] = db.execute(queries.ViewAllDepartments);
+                var [rows, fields] = await db.promise().query(queries.ViewAllDepartments);
                 rows.forEach((row) => {
                     prompt[0].choices.push({
                         name: row.name,
@@ -197,14 +197,14 @@ const InvokeMain = function() {
                         choices: []
                     }
                 ];
-                var [rows, fields] = db.execute(queries.ViewAllRoles);
+                var [rows, fields] = await db.promise().query(queries.ViewAllRoles);
                 rows.forEach((row) => {
                     prompt[2].choices.push({
                         name: row.title + ' - ' + row.department,
                         value: row.id
                     });
                 });
-                var [rows, fields] = db.execute(queries.ViewAllEmployees);
+                var [rows, fields] = await db.promise().query(queries.ViewAllEmployees);
                 rows.forEach((row) => {
                     prompt[3].choices.push({
                         name: row.first_name + ' ' + row.last_name + ' - ' + row.title + ' - ' + row.department,
@@ -259,9 +259,9 @@ const InvokeMain = function() {
                         choices: []
                     }
                 ];
-                var [rows, fields] = db.execute(queries.ViewAllDepartments);
+                var [rows, fields] = await db.promise().query(queries.ViewAllDepartments);
                 rows.forEach((row) => {
-                    prompt[0].choices.push({
+                    prompt[2].choices.push({
                         name: row.name,
                         value: row.id
                     });
@@ -293,14 +293,14 @@ const InvokeMain = function() {
                         choices: []
                     }
                 ];
-                var [rows, fields] = db.execute(queries.ViewAllEmployees);
+                var [rows, fields] = await db.promise().query(queries.ViewAllEmployees);
                 rows.forEach((row) => {
                     prompt[0].choices.push({
                         name: row.first_name + ' ' + row.last_name + ' - ' + row.title + ' - ' + row.department,
                         value: row.id
                     });
                 });
-                var [rows, fields] = db.execute(queries.ViewAllRoles);
+                var [rows, fields] = await db.promise().query(queries.ViewAllRoles);
                 rows.forEach((row) => {
                     prompt[1].choices.push({
                         name: row.title + ' - ' + row.department,
@@ -333,7 +333,7 @@ const InvokeMain = function() {
                         choices: []
                     }
                 ];
-                var [rows, fields] = db.execute(queries.ViewAllEmployees);
+                var [rows, fields] = await db.promise().query(queries.ViewAllEmployees);
                 rows.forEach((row) => {
                     prompt[0].choices.push({
                         name: row.first_name + ' ' + row.last_name + ' - ' + row.title + ' - ' + row.department,
@@ -364,7 +364,7 @@ const InvokeMain = function() {
                         choices: []
                     }
                 ];
-                var [rows, fields] = db.execute(queries.ViewAllEmployees);
+                var [rows, fields] = await db.promise().query(queries.ViewAllEmployees);
                 rows.forEach((row) => {
                     prompt[0].choices.push({
                         name: row.first_name + ' ' + row.last_name + ' - ' + row.title + ' - ' + row.department,
@@ -390,7 +390,7 @@ const InvokeMain = function() {
                         choices: []
                     }
                 ];
-                var [rows, fields] = db.execute(queries.ViewAllDepartments);
+                var [rows, fields] = await db.promise().query(queries.ViewAllDepartments);
                 rows.forEach((row) => {
                     prompt[0].choices.push({
                         name: row.name,
@@ -416,7 +416,7 @@ const InvokeMain = function() {
                         choices: []
                     }
                 ];
-                var [rows, fields] = db.execute(queries.ViewAllRoles);
+                var [rows, fields] = await db.promise().query(queries.ViewAllRoles);
                 rows.forEach((row) => {
                     prompt[0].choices.push({
                         name: row.title + ' - ' + row.department,
