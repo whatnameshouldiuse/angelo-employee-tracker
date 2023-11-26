@@ -33,7 +33,7 @@ ORDER BY role.id;
 
 const ViewByManagerPrompt = `
 SELECT 
-    em.id, em.first_name, em.last_name, role.title, department.name
+    em.id, em.first_name, em.last_name, role.title, department.name as department
 FROM 
     employee as em
 INNER JOIN (
@@ -95,7 +95,7 @@ LEFT JOIN (
     role LEFT JOIN employee ON role.id = employee.role_id
 )
     ON department.id = role.department_id
-ORDER BY department.id
+WHERE department.id = ?
 GROUP BY department.id
 `
 
