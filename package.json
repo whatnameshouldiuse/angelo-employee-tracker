@@ -1,0 +1,23 @@
+{
+  "name": "angelo-employee-tracker",
+  "version": "1.0.0",
+  "description": "Module 12 Challenge for UT Full-Stack Bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whatnameshouldiuse/angelo-employee-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whatnameshouldiuse/angelo-employee-tracker/issues"
+  },
+  "homepage": "https://github.com/whatnameshouldiuse/angelo-employee-tracker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.6.5"
+  }
+}
